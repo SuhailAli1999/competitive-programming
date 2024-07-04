@@ -69,6 +69,13 @@ int32_t main() {
         acs.close();
         if (ac != wa){
             cerr << "Mismatch found in case " << tc << '\n';
+             cerr << "Test case input:\n";
+            ifstream test_input("test.txt");
+            string line;
+            while (getline(test_input, line)) {
+                cerr << line << '\n';
+            }
+            test_input.close();
             cerr << "Expected: " << ac << '\n';
             cerr << "Found: " << wa << '\n';
             return 1;
